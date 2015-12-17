@@ -1,0 +1,15 @@
+<section ng-if="product.images.length" ng-controller="GalleryController as galleryCtrl">
+    <div class="img-wrap">
+        <img ng-src="{{product.images[galleryCtrl.current]}}" />
+    </div>
+    <!--<ul class="list-inline thumbs">-->
+    <!--<li class="thumbnail" ng-repeat="image in product.images">-->
+    <!--<img ng-src="{{image}}" />-->
+    <!--</li>-->
+    <!--</ul>-->
+    <ul class="img-thumbnails clearfix">
+        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}" ng-click="galleryCtrl.setCurrent($index)"/>
+        </li>
+    </ul>
+</section>
